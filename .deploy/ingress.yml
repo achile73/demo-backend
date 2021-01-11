@@ -4,7 +4,7 @@ metadata:
   name: demo-backend-ingress
 spec:
   rules:
-    - host: demobackend.dev.insee.io/
+    - host: demobackend-test.dev.insee.io/
       http:
         paths:
           - path: /
