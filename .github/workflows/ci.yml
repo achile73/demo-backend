@@ -37,8 +37,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          #username: ${{ github.actor }}
-          #password: ${{ secrets.PAT }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.PAT }}
           registry: ghcr.io
           #repository: achile73/demos/demo-backend
           tag_with_ref: true
