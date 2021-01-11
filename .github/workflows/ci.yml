@@ -12,6 +12,11 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.PAT }}
         run:  echo "$SUPER_SECRET"
+            - name: Login to ghrc
+      - name: tester login
+        env:
+          CR_PAT: ${{ secrets.PAT }}
+        run: echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
       - uses: actions/checkout@v2
       - name: Set up JDK 11
         uses: actions/setup-java@v1
@@ -29,5 +34,7 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - name: Login to ghrc
+        env:
+          CR_PAT: ${{ secrets.PAT }}
       #  uses: docker/login-action@v1
         run: echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin
