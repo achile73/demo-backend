@@ -12,7 +12,6 @@ jobs:
         env:
           SUPER_SECRET: ${{ secrets.PAT }}
         run:  echo "$SUPER_SECRET"
-            - name: Login to ghrc
       - name: tester login
         env:
           CR_PAT: ${{ secrets.PAT }}
