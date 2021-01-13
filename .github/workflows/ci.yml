@@ -50,11 +50,11 @@ jobs:
           registry: ghcr.io
           #repository: achile73/demos/demo-backend
           tag_with_ref: true
-      - name: deploy to cluster
-        uses: steebchen/kubectl@master
-        env:
-          KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
-        with:
-          args: set image --record deployment/my-app container=${{ github.repository }}:${{ github.sha }}
+      #- name: deploy to cluster
+      #  uses: steebchen/kubectl@master
+      #  env:
+      #    KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+      #  with:
+      #    args: set image --record deployment/my-app container=${{ github.repository }}:${{ github.sha }}
 
 
