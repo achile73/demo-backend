@@ -1,16 +1,16 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: demo-backend-ingress
+  name: demo-backend-it-ingress
 spec:
   rules:
-    - host: demobackend-test.dev.insee.io/
+    - host: demobackend-it-test.dev.insee.io/
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: demo-backend-svc
+                name: demo-backend-it-svc
                 port:
                   number: 8080

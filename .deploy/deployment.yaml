@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-backend
+  name: demo-backend-it
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: demo-backend
+      app: demo-backend-it
   template:
     metadata:
       labels:
-        app: demo-backend
+        app: demo-backend-it
     spec:
       containers:
         - name: backend-container
-          image: melobenja/demo-backend
+          image: ghcr.io/achile73/demo-backend
           resources:
             limits:
               memory: "128Mi"
